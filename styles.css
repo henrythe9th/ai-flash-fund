@@ -1,17 +1,17 @@
 /* Base styles and reset */
 :root {
-    --primary: #1A2942;
-    --primary-dark: #0F1A2A;
-    --secondary: #2E4172;
-    --accent: #3E6990;
+    --primary: #1A1D2A;
+    --primary-dark: #0D1117;
+    --secondary: #2A3140;
+    --accent: #5465FF;
     --light: #FFFFFF;
-    --off-white: #F9F9FB;
-    --gray: #5C6B7F;
-    --gray-light: #EFF2F7;
-    --success: #2D936C;
-    --highlight: #E76F51;
-    --highlight-secondary: #F4A261;
-    --radius: 0px;
+    --off-white: #F9FAFB;
+    --gray: #667085;
+    --gray-light: #F1F5F9;
+    --success: #4F46E5;
+    --highlight: #5465FF;
+    --highlight-secondary: #BFD7FF;
+    --radius: 8px;
 }
 
 * {
@@ -25,11 +25,13 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     color: var(--primary);
     background-color: var(--off-white);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .container {
@@ -40,15 +42,15 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.1;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
 }
 
 h1 {
     font-size: 5rem;
     margin-bottom: 2.5rem;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 h2 {
@@ -67,6 +69,8 @@ p {
     font-size: 1.125rem;
     line-height: 1.7;
     color: var(--gray);
+    font-weight: 450;
+    letter-spacing: -0.01em;
 }
 
 a {
@@ -97,9 +101,9 @@ header .container {
 
 .logo {
     font-size: 1.25rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--accent);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
 }
 
 nav {
@@ -108,12 +112,12 @@ nav {
 }
 
 nav a {
-    font-weight: 500;
+    font-weight: 400;
     font-size: 0.9rem;
     opacity: 0.7;
     color: var(--primary);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
 }
 
 nav a:hover {
@@ -141,6 +145,8 @@ nav a:hover {
     margin: 0 0 4.5rem;
     color: var(--gray);
     line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: -0.02em;
 }
 
 .cta-button {
@@ -149,18 +155,17 @@ nav a:hover {
     color: var(--light);
     padding: 1.5rem 4rem;
     border-radius: var(--radius);
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.5rem;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
-    text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: #D15A3C;
+    background-color: #4338CA;
     transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(79, 70, 229, 0.25);
 }
 
 /* Process section */
@@ -178,7 +183,7 @@ nav a:hover {
     top: -2.5rem;
     left: 0;
     right: 0;
-    background-color: var(--highlight);
+    background: linear-gradient(90deg, var(--success) 0%, #6366F1 100%);
     color: var(--light);
     text-align: center;
     padding: 0.75rem 0;
@@ -194,6 +199,7 @@ nav a:hover {
     font-size: 4rem;
     margin-bottom: 5rem;
     position: relative;
+    letter-spacing: -0.04em;
 }
 
 .steps {
@@ -233,7 +239,7 @@ nav a:hover {
 .step-number {
     position: relative;
     top: 0;
-    background-color: var(--highlight);
+    background-color: var(--success);
     color: var(--light);
     width: 5.5rem;
     height: 5.5rem;
@@ -244,7 +250,7 @@ nav a:hover {
     margin: -5.5rem auto 2rem;
     font-size: 2.5rem;
     font-weight: 700;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.2);
     border: 4px solid var(--secondary);
 }
 
@@ -252,12 +258,16 @@ nav a:hover {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     color: var(--light);
+    font-weight: 500;
+    letter-spacing: -0.02em;
 }
 
 .step p {
     color: var(--off-white);
-    opacity: 0.9;
+    opacity: 1;
     font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 /* About section */
@@ -281,7 +291,8 @@ nav a:hover {
     font-size: 4.5rem;
     color: var(--primary);
     margin-bottom: 1rem;
-    font-weight: 700;
+    font-weight: 600;
+    letter-spacing: -0.04em;
 }
 
 .stat-box p {
@@ -300,6 +311,8 @@ nav a:hover {
     margin: 0;
     line-height: 1.5;
     color: var(--gray);
+    font-weight: 400;
+    letter-spacing: -0.02em;
 }
 
 /* Terms section */
@@ -327,7 +340,7 @@ nav a:hover {
 
 /* Apply section */
 .apply {
-    background-color: var(--accent);
+    background: linear-gradient(135deg, var(--success) 0%, #4338CA 100%);
     color: var(--light);
     text-align: center;
 }
@@ -344,13 +357,14 @@ nav a:hover {
 }
 
 .apply .cta-button {
-    background-color: var(--highlight);
+    background-color: var(--light);
+    color: var(--success);
 }
 
 .apply .cta-button:hover {
-    background-color: #D15A3C;
+    background-color: var(--off-white);
     transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 }
 
 /* Login section */
@@ -412,7 +426,8 @@ nav a:hover {
 .faq-question h3 {
     margin: 0;
     font-size: 1.25rem;
-    font-weight: 500;
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 .faq-icon {
     font-size: 1.25rem;
