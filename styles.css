@@ -283,6 +283,66 @@ nav a:hover {
     letter-spacing: -0.01em;
 }
 
+/* We Believe section */
+.we-believe {
+    background-color: var(--light);
+}
+
+.belief-boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.belief-box {
+    padding: 2.5rem;
+    background-color: var(--off-white);
+    border-radius: var(--radius);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.belief-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.belief-box h3 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.belief-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.belief-box li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--gray);
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+.belief-box li:before {
+    content: "•";
+    color: var(--highlight);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+@media (max-width: 992px) {
+    .belief-boxes {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
 /* About section */
 .about {
     background-color: var(--off-white);
@@ -409,7 +469,7 @@ nav a:hover {
 
 .leaderboard-subtitle {
     font-size: 1.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     color: var(--gray);
     line-height: 1.4;
     font-weight: 400;
