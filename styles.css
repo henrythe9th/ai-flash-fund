@@ -1,14 +1,17 @@
 /* Base styles and reset */
 :root {
-    --primary: #1C1C1C;
-    --primary-dark: #000000;
-    --secondary: #2C2C2C;
+    --primary: #1A2942;
+    --primary-dark: #0F1A2A;
+    --secondary: #2E4172;
+    --accent: #3E6990;
     --light: #FFFFFF;
-    --gray: #666666;
-    --gray-light: #F4F4F4;
-    --success: #10B981;
+    --off-white: #F9F9FB;
+    --gray: #5C6B7F;
+    --gray-light: #EFF2F7;
+    --success: #2D936C;
+    --highlight: #E76F51;
+    --highlight-secondary: #F4A261;
     --radius: 0px;
-    --highlight: #FF5C00;
 }
 
 * {
@@ -25,7 +28,7 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--primary);
-    background-color: var(--light);
+    background-color: var(--off-white);
     -webkit-font-smoothing: antialiased;
 }
 
@@ -75,7 +78,6 @@ section {
     padding: 8rem 0;
 }
 
-/* Rest of the CSS remains exactly the same */
 /* Header styles */
 header {
     background-color: var(--light);
@@ -83,6 +85,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 100;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
 
 header .container {
@@ -95,7 +98,7 @@ header .container {
 .logo {
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--accent);
     letter-spacing: -0.01em;
 }
 
@@ -107,13 +110,15 @@ nav {
 nav a {
     font-weight: 500;
     font-size: 0.9rem;
-    opacity: 0.6;
+    opacity: 0.7;
+    color: var(--primary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 nav a:hover {
     opacity: 1;
+    color: var(--highlight);
 }
 
 /* Hero section */
@@ -127,6 +132,7 @@ nav a:hover {
 .hero h1 {
     max-width: 900px;
     margin: 0 0 3rem;
+    color: var(--primary);
 }
 
 .subtitle {
@@ -139,22 +145,124 @@ nav a:hover {
 
 .cta-button {
     display: inline-block;
-    background-color: var(--primary);
+    background-color: var(--highlight);
     color: var(--light);
     padding: 1.5rem 4rem;
     border-radius: var(--radius);
-    font-weight: 500;
-    font-size: 1.1rem;
-    letter-spacing: -0.01em;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: var(--primary-dark);
+    background-color: #D15A3C;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Process section */
+.process {
+    background-color: var(--secondary);
+    color: var(--light);
+    padding: 10rem 0;
+    position: relative;
+    z-index: 10;
+}
+
+.process::before {
+    content: "Setup within 1 minute • No endless calls • No random \"coffee chats\"";
+    position: absolute;
+    top: -2.5rem;
+    left: 0;
+    right: 0;
+    background-color: var(--highlight);
+    color: var(--light);
+    text-align: center;
+    padding: 0.75rem 0;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-size: 1.2rem;
+    z-index: 5;
+}
+
+.process h2 {
+    color: var(--light);
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 5rem;
+    position: relative;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 3rem;
+    position: relative;
+}
+
+.steps::before {
+    content: '';
+    position: absolute;
+    top: 3.75rem;
+    left: calc(16.67% + 3.75rem);
+    width: calc(66.67% - 7.5rem);
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: 1;
+}
+
+.step {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 3rem 2rem;
+    position: relative;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    position: relative;
+    top: 0;
+    background-color: var(--highlight);
+    color: var(--light);
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -5.5rem auto 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 4px solid var(--secondary);
+}
+
+.step h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--light);
+}
+
+.step p {
+    color: var(--off-white);
+    opacity: 0.9;
+    font-size: 1.2rem;
 }
 
 /* About section */
 .about {
-    background-color: var(--light);
+    background-color: var(--off-white);
 }
 
 .stats-container {
@@ -182,7 +290,7 @@ nav a:hover {
 }
 
 .stat-box.highlight h3 {
-    color: var(--primary);
+    color: var(--highlight);
 }
 
 .mission {
@@ -192,45 +300,6 @@ nav a:hover {
     margin: 0;
     line-height: 1.5;
     color: var(--gray);
-}
-
-/* Process section */
-.process {
-    background-color: var(--gray-light);
-}
-
-.steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;
-    margin-top: 4rem;
-}
-
-.step {
-    background-color: transparent;
-    padding: 0;
-    position: relative;
-}
-
-.step-number {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: none;
-    background-color: transparent;
-    color: var(--gray);
-    width: auto;
-    height: auto;
-    margin-bottom: 2rem;
-    font-size: 1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
-.step h3 {
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
 }
 
 /* Terms section */
@@ -247,6 +316,8 @@ nav a:hover {
 .term-item {
     background-color: transparent;
     padding: 0;
+    border-left: 3px solid var(--highlight-secondary);
+    padding-left: 1.5rem;
 }
 
 .term-item h3 {
@@ -256,20 +327,30 @@ nav a:hover {
 
 /* Apply section */
 .apply {
-    background-color: var(--gray-light);
-    color: var(--primary);
+    background-color: var(--accent);
+    color: var(--light);
     text-align: center;
 }
 
 .apply h2 {
-    color: var(--primary);
+    color: var(--light);
     text-align: center;
 }
 
 .apply p {
     font-size: 1.75rem;
     margin-bottom: 3.5rem;
-    color: var(--gray);
+    color: var(--off-white);
+}
+
+.apply .cta-button {
+    background-color: var(--highlight);
+}
+
+.apply .cta-button:hover {
+    background-color: #D15A3C;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* Login section */
@@ -296,12 +377,16 @@ nav a:hover {
 
 .login-input:focus {
     outline: none;
-    border-color: var(--primary);
+    border-color: var(--accent);
 }
 
 /* FAQ section */
 .faq {
     background-color: var(--gray-light);
+}
+
+.faq h2 {
+    color: var(--primary);
 }
 
 .faq-container {
@@ -329,10 +414,9 @@ nav a:hover {
     font-size: 1.25rem;
     font-weight: 500;
 }
-
 .faq-icon {
     font-size: 1.25rem;
-    color: var(--primary);
+    color: var(--highlight);
 }
 
 .faq-answer {
@@ -352,10 +436,10 @@ nav a:hover {
 
 /* Footer */
 footer {
-    background-color: var(--light);
-    color: var(--primary);
+    background-color: var(--primary-dark);
+    color: var(--light);
     padding: 6rem 0 3rem;
-    border-top: 1px solid var(--gray-light);
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .footer-content {
@@ -371,7 +455,7 @@ footer {
 }
 
 .footer-links a {
-    color: var(--gray);
+    color: var(--off-white);
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -380,14 +464,15 @@ footer {
 
 .footer-links a:hover {
     opacity: 1;
+    color: var(--highlight-secondary);
 }
 
 .copyright {
     text-align: center;
-    color: var(--gray);
+    color: var(--off-white);
     font-size: 0.9rem;
     padding-top: 3rem;
-    border-top: 1px solid var(--gray-light);
+    border-top: 1px solid rgba(255,255,255,0.05);
     opacity: 0.6;
 }
 
@@ -399,6 +484,10 @@ footer {
     
     h2 {
         font-size: 3rem;
+    }
+    
+    .steps::before {
+        display: none;
     }
 }
 
@@ -413,12 +502,21 @@ footer {
     
     .stats-container, .steps {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 6rem;
     }
     
     .terms-container {
         grid-template-columns: 1fr;
         gap: 3rem;
+    }
+    
+    .step-number {
+        margin-top: -3.5rem;
+    }
+    
+    .process::before {
+        font-size: 1rem;
+        padding: 0.6rem 0;
     }
 }
 
@@ -469,5 +567,10 @@ footer {
     
     section {
         padding: 6rem 0;
+    }
+    
+    .process::before {
+        font-size: 0.8rem;
+        padding: 0.5rem 0;
     }
 }
