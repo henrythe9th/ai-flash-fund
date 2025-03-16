@@ -1,56 +1,27 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80, // Offset for fixed header
-                    behavior: 'smooth'
-                });
-            }
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
         });
     });
+});
 
-    // Header scroll effect
-    const header = document.querySelector('header');
-    let lastScrollTop = 0;
-    
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+// FAQ accordion functionality
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        const isActive = faqItem.classList.contains('active');
         
-        // Add shadow and change background opacity based on scroll position
-        if (scrollTop > 50) {
-            header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-            header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-        } else {
-            header.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
-            header.style.backgroundColor = 'white';
-        }
-        
-        lastScrollTop = scrollTop;
-    });
-    
-    // FAQ accordion functionality
-    const faqItems = document.querySelectorAll('.faq-item');
-    
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        
-        question.addEventListener('click', () => {
-            // Close all other FAQ items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    otherItem.classList.remove('active');
-                }
-            });
-            
-            // Toggle the clicked FAQ item
-            item.classList.toggle('active');
+        // Close all FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.classList.remove('active');
         });
+        
+        // Toggle clicked item
+        if (!isActive) {
+            faqItem.classList.add('active');
+        }
     });
 });
