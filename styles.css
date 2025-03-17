@@ -528,6 +528,49 @@ nav a:hover {
     margin-bottom: 1rem;
 }
 
+/* Benefits section */
+.benefits {
+    background-color: var(--off-white);
+}
+
+.benefits-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.benefit-item {
+    background-color: var(--light);
+    padding: 2rem;
+    border-radius: var(--radius);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-item h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.benefit-item p {
+    color: var(--gray);
+    margin-bottom: 0;
+}
+
+@media (max-width: 992px) {
+    .benefits-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
 /* Apply section */
 .apply {
     background: linear-gradient(135deg, var(--success) 0%, #4338CA 100%);
