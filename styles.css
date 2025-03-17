@@ -388,6 +388,94 @@ nav a:hover {
     letter-spacing: -0.02em;
 }
 
+/* Founder's Story section */
+.founders-story {
+    background-color: var(--light);
+    position: relative;
+}
+
+.founder-content {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 4rem;
+    align-items: center;
+}
+
+.founder-image {
+    position: relative;
+}
+
+.journey-image {
+    width: 100%;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.founder-text {
+    text-align: left;
+}
+
+.founder-intro {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    line-height: 1.4;
+}
+
+.founder-quote {
+    background-color: var(--off-white);
+    border-left: 4px solid var(--highlight);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.founder-quote p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    font-style: italic;
+}
+
+.founder-quote ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.founder-quote li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--gray);
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.founder-quote li:before {
+    content: "•";
+    color: var(--highlight);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+@media (max-width: 992px) {
+    .founder-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .founder-image {
+        order: 1;
+    }
+    
+    .founder-text {
+        order: 2;
+    }
+}
+
 /* Terms section */
 .terms {
     background-color: var(--light);
