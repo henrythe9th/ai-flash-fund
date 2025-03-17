@@ -361,9 +361,9 @@ nav a:hover {
 
 .stats-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;
-    margin-bottom: 5rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin-bottom: 3rem;
 }
 
 .stat-box {
@@ -926,7 +926,12 @@ footer {
         font-size: 2.6rem;
     }
     
-    .stats-container, .steps {
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
+    
+    .steps {
         grid-template-columns: 1fr;
         gap: 6rem;
     }
@@ -943,6 +948,13 @@ footer {
     .process::before {
         font-size: 1rem;
         padding: 0.6rem 0;
+    }
+}
+
+@media (max-width: 650px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
 }
 
