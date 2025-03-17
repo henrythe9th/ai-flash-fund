@@ -766,11 +766,6 @@ nav a:hover {
     letter-spacing: -0.01em;
 }
 
-.leaderboard-table td:nth-child(9),
-.leaderboard-table td:nth-child(10) {
-    min-width: 120px;
-}
-
 .leaderboard-note {
     font-size: 0.9rem;
     color: var(--gray);
