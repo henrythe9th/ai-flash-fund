@@ -149,6 +149,17 @@ nav a:hover {
 .underline-text {
     position: relative;
     display: inline-block;
+    transition: opacity 0.5s ease;
+    min-width: 180px; /* Ensures consistent width during word changes */
+    text-align: center;
+}
+
+/* Class added via JS for the animated text */
+.animated-text {
+    display: inline-block;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    will-change: opacity;
 }
 
 .handdrawn-underline {
