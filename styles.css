@@ -542,6 +542,10 @@ nav a:hover {
     font-weight: bold;
 }
 
+.founder-quote li.x-mark:before {
+    content: "✗";
+}
+
 @media (max-width: 992px) {
     .founder-content {
         grid-template-columns: 1fr;
