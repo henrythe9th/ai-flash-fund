@@ -1159,14 +1159,7 @@ footer {
         white-space: nowrap;
     }
     
-    .leaderboard-table th:first-child,
-    .leaderboard-table td:first-child {
-        position: sticky;
-        left: 0;
-        background-color: var(--light);
-        z-index: 1;
-        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    }
+    /* Removed sticky positioning for the rank column on mobile */
     
     .leaderboard-subtitle {
         font-size: 1.25rem;
