@@ -2,17 +2,37 @@
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
+        
+        // Close mobile menu if it's open
+        if (document.querySelector('nav').classList.contains('open')) {
+            document.querySelector('nav').classList.remove('open');
+            document.querySelector('.mobile-menu-toggle').classList.remove('active');
+        }
+        
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
     });
 });
 
+// Mobile menu toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('nav');
+    
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            nav.classList.toggle('open');
+        });
+    }
+});
+
 // Text animation for hero section
 document.addEventListener('DOMContentLoaded', () => {
     const textElement = document.querySelector('.underline-text');
     if (textElement) {
-        const words = ['AI-Native', 'Vibe Coder', 'Seed-Strap', 'Solo', 'Smart'];
+        const words = ['AI-Native', 'Seed-Strap', 'Vibe Coder', 'Solo', 'Smart'];
         let currentIndex = 0;
         
         // Store the original content for reference
