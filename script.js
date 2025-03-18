@@ -12,7 +12,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.addEventListener('DOMContentLoaded', () => {
     const textElement = document.querySelector('.underline-text');
     if (textElement) {
-        const words = ['AI-Native', 'Vibe Coder', 'Seed-Strap', 'Smart'];
+        const words = ['AI-Native', 'Vibe Coder', 'Seed-Strap', 'Solo', 'Smart'];
         let currentIndex = 0;
         
         // Store the original content for reference
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 textElement.innerHTML += originalSvg;
                 
                 // Add different highlight color based on word
-                const colors = ['#5465FF', '#FF5454', '#48BB78', '#ECC94B'];
+                const colors = ['#5465FF', '#FF5454', '#48BB78', '#9C27B0', '#ECC94B'];
                 const path = textElement.querySelector('svg path');
                 if (path) {
                     path.setAttribute('stroke', colors[currentIndex]);
