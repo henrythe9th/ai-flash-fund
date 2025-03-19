@@ -577,6 +577,7 @@ nav a:hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
+    margin-top: 40px;
 }
 
 .term-item {
@@ -589,6 +590,10 @@ nav a:hover {
 .term-item h3 {
     color: var(--primary);
     margin-bottom: 1rem;
+}
+
+.terms .final-note {
+    margin-top: 40px;
 }
 
 /* Benefits section */
