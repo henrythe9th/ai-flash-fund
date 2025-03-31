@@ -228,6 +228,100 @@ nav a:hover {
     box-shadow: 0 4px 8px rgba(79, 70, 229, 0.25);
 }
 
+/* Why Nexus section */
+.why-nexus {
+    background-color: var(--off-white); /* Match other light sections */
+}
+
+.why-nexus h2 {
+    text-align: center; /* Center the title */
+    color: var(--primary);
+    margin-bottom: 4rem; /* Add space below title */
+}
+
+.why-nexus-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 2rem; /* Space between columns */
+    margin-bottom: 4rem; /* Space below the stats */
+}
+
+.why-nexus-stat {
+    background-color: var(--light); /* White background for boxes */
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-nexus-stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.why-nexus-stat h3 {
+    font-size: 4rem; /* Large font for the number */
+    color: var(--highlight); /* Use highlight color for numbers */
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.why-nexus-stat p {
+    font-size: 1.125rem;
+    color: var(--gray);
+    margin-bottom: 0; /* Remove default bottom margin */
+}
+
+.why-nexus-stat.highlight {
+    background-color: var(--highlight); /* Blue background for highlighted box */
+    color: var(--light); /* White text for highlighted box */
+}
+
+.why-nexus-stat.highlight h3 {
+    color: var(--light); /* White number */
+}
+
+.why-nexus-stat.highlight p {
+    color: var(--off-white); /* Lighter text */
+    opacity: 0.9;
+}
+
+.mission-statement {
+    font-size: 1.5rem; /* Slightly larger text */
+    text-align: center; /* Center the text */
+    max-width: 900px; /* Limit width */
+    margin: 0 auto; /* Center the block */
+    line-height: 1.6;
+    color: var(--gray);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+}
+
+/* Responsive adjustments for Why Nexus */
+@media (max-width: 992px) {
+    .why-nexus-stats {
+        grid-template-columns: 1fr; /* Stack columns on medium screens */
+        gap: 1.5rem;
+    }
+    .why-nexus-stat h3 {
+        font-size: 3.5rem;
+    }
+    .mission-statement {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-nexus-stat h3 {
+        font-size: 3rem;
+    }
+    .mission-statement {
+        font-size: 1.2rem;
+    }
+}
+
+
 /* Process section */
 .process {
     background-color: var(--secondary);
